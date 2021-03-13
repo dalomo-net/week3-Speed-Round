@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
 
 val NunitoSansBold = FontFamily(
-    Font(R.font.nsb)
+    Font(R.font.nsb),
 )
 
 val NunitoSansLight = FontFamily(
@@ -79,7 +79,7 @@ val typography = Typography(
         fontFamily = NunitoSansSemiBold,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp
-    ),
+    )
 
 /* Other default text styles to override
 button = TextStyle(
