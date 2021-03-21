@@ -23,9 +23,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -37,27 +39,32 @@ import androidx.navigation.compose.navigate
 
 @Composable
 fun Welcome(navController: NavController) {
-    Scaffold(
-        backgroundColor = MaterialTheme.colors.primary
+    Surface(
+        color = MaterialTheme.colors.primary
     ) {
 
-        Box() {
+        Box {
             Image(
-                painter = painterResource(id = R.drawable.light_welcome_bg),
-                contentDescription = ""
+                painter = painterResource(id = R.drawable.welcome_bg),
+                contentDescription = "background"
             )
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-
+            Column(
+                modifier = Modifier.padding(top = 72.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Image(
+
+                    painter = painterResource(id = R.drawable.ic_welcome_illos),
+                    contentDescription = "Welcome illos",
                     modifier = Modifier
-                        .padding(start = 88.dp, top = 72.dp, bottom = 48.dp),
-                    contentScale = ContentScale.None,
-                    painter = painterResource(id = R.drawable.light_welcome_illos),
-                    contentDescription = ""
+                        .padding(start = 88.dp),
+                    contentScale = ContentScale.Crop,
+                    alignment = Alignment.CenterStart
                 )
                 Image(
-                    painter = painterResource(id = R.drawable.light_logo),
-                    contentDescription = ""
+                    painter = painterResource(id = R.drawable.logo),
+                    contentDescription = "",
+                    modifier = Modifier.padding(top = 48.dp)
                 )
                 Text(
                     text = "Beautiful home garden solutions",
@@ -71,8 +78,8 @@ fun Welcome(navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(48.dp)
-                        .padding(top = 40.dp)
-
+                        .padding(start = 16.dp, end = 16.dp),
+                    colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary)
                 ) {
                     Text(
                         text = "Create account",
@@ -80,9 +87,8 @@ fun Welcome(navController: NavController) {
                         style = MaterialTheme.typography.button
                     )
                 }
-                Button(
+                TextButton(
                     onClick = { navController.navigate("login") },
-                    shape = MaterialTheme.shapes.medium,
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(48.dp)

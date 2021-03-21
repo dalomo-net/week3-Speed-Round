@@ -44,11 +44,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import dev.chrisbanes.accompanist.insets.navigationBarsPadding
 
 @Composable
 fun Home() {
 
-    Scaffold(bottomBar = { BottomBar() }) {
+    Scaffold(bottomBar = { BottomBar() },
+    modifier = Modifier.navigationBarsPadding()) {
         Column(modifier = Modifier.padding(16.dp)) {
 
             Spacer(modifier = Modifier.height(40.dp))
@@ -91,39 +93,39 @@ fun BottomBar() {
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
 
-            Column() {
-                Image(
-                    painter = painterResource(id = R.drawable.home),
-                    contentDescription = "Home",
-                    colorFilter = ColorFilter.tint(Color.Black)
-                )
-                Text("Home", style = MaterialTheme.typography.caption)
-            }
-            Column() {
-                Image(
-                    painter = painterResource(id = R.drawable.favarites),
-                    contentDescription = "",
-                    colorFilter = ColorFilter.tint(Color.LightGray)
-                )
-                Text("Favorites", style = MaterialTheme.typography.caption)
-            }
-
-            Column() {
-                Image(
-                    painter = painterResource(id = R.drawable.profile),
-                    contentDescription = "Home",
-                    colorFilter = ColorFilter.tint(Color.LightGray)
-                )
-                Text("Profile", style = MaterialTheme.typography.caption)
-            }
-            Column() {
-                Image(
-                    painter = painterResource(id = R.drawable.cart),
-                    contentDescription = "Home",
-                    colorFilter = ColorFilter.tint(Color.LightGray)
-                )
-                Text("Cart", style = MaterialTheme.typography.caption)
-            }
+            // Column() {
+            //     Image(
+            //         painter = painterResource(id = R.drawable.home),
+            //         contentDescription = "Home",
+            //         colorFilter = ColorFilter.tint(Color.Black)
+            //     )
+            //     Text("Home", style = MaterialTheme.typography.caption)
+            // }
+            // Column() {
+            //     Image(
+            //         painter = painterResource(id = R.drawable.favarites),
+            //         contentDescription = "",
+            //         colorFilter = ColorFilter.tint(Color.LightGray)
+            //     )
+            //     Text("Favorites", style = MaterialTheme.typography.caption)
+            // }
+            //
+            // Column() {
+            //     Image(
+            //         painter = painterResource(id = R.drawable.profile),
+            //         contentDescription = "Home",
+            //         colorFilter = ColorFilter.tint(Color.LightGray)
+            //     )
+            //     Text("Profile", style = MaterialTheme.typography.caption)
+            // }
+            // Column() {
+            //     Image(
+            //         painter = painterResource(id = R.drawable.cart),
+            //         contentDescription = "Home",
+            //         colorFilter = ColorFilter.tint(Color.LightGray)
+            //     )
+            //     Text("Cart", style = MaterialTheme.typography.caption)
+            // }
         }
     }
 }
