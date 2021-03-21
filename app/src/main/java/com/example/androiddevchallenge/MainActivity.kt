@@ -30,7 +30,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.theme.MyTheme
 import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
-import dev.chrisbanes.accompanist.insets.systemBarsPadding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +49,8 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun MyApp() {
 
-    Surface(color = MaterialTheme.colors.background,
+    Surface(
+        color = MaterialTheme.colors.background,
         modifier = Modifier.fillMaxSize()
     ) {
         val navController = rememberNavController()
