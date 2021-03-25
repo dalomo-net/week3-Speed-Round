@@ -168,8 +168,7 @@ fun LazyColumnList() {
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(8.dp),
         contentPadding = PaddingValues(bottom = 56.dp)
-    )
-    {
+    ) {
         item {
             PlantItem(n = "Monstera", rid = R.drawable.monstera)
         }
@@ -208,7 +207,6 @@ fun PlantItem(n: String, rid: Int) {
                 .clip(shape = MaterialTheme.shapes.small),
             contentScale = ContentScale.Crop
         ) {
-
         }
         Column() {
             Row(
@@ -266,7 +264,6 @@ fun ThemeCard(n: String, rid: Int) {
 
     val path: Uri = Uri.parse("android.resource://com.example.androiddevchallenge/$rid")
 
-
     Card(
         modifier = Modifier
             .size(136.dp)
@@ -283,7 +280,6 @@ fun ThemeCard(n: String, rid: Int) {
                     .height(96.dp),
                 contentScale = ContentScale.Crop
             ) {
-
             }
             Text(
                 text = n,
@@ -293,7 +289,6 @@ fun ThemeCard(n: String, rid: Int) {
                     .padding(start = 8.dp)
                     .paddingFromBaseline(top = 24.dp)
             )
-
         }
     }
 }
@@ -304,4 +299,3 @@ fun Previewterm() {
 
     Home()
 }
-

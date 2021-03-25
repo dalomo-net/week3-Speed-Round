@@ -38,7 +38,6 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
@@ -80,7 +79,7 @@ fun Login(navController: NavController) {
 
             OutlinedTextField(
                 value = pwd.value,
-                onValueChange = { pwd.value = it},
+                onValueChange = { pwd.value = it },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(56.dp),
@@ -108,7 +107,7 @@ fun Login(navController: NavController) {
                 },
                 style = MaterialTheme.typography.body2,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.paddingFromBaseline(top = 24.dp,bottom = 16.dp)
+                modifier = Modifier.paddingFromBaseline(top = 24.dp, bottom = 16.dp)
             )
             Button(
                 onClick = { navController.navigate("home") },
